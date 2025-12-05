@@ -12,6 +12,8 @@ new Dag3().ExecutePart1();
 new Dag3().ExecutePart2();
 new Dag4().ExecutePart1();
 new Dag4().ExecutePart2();
+new Dag5().ExecutePart1();
+new Dag5().ExecutePart2();
 var diff = Stopwatch.GetElapsedTime(start);
 Console.WriteLine($"Time: {diff.TotalMilliseconds} ms");
 
