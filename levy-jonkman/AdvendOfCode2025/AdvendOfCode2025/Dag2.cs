@@ -65,7 +65,7 @@ public class Dag2 : Dag
         return digits == string.Concat(Enumerable.Repeat(pattern, t));
     }
 
-    private static List<(long Min, long Max)> GetRanges() => Helper.LoadInput().Split(",").Select(r =>
+    private static List<(long Min, long Max)> GetRanges() => LoadInput().Split(",").Select(r =>
     {
         var parts = r.Split("-");
         return (Min: long.Parse(parts[0]), Max: long.Parse(parts[1]));

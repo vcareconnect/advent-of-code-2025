@@ -16,6 +16,8 @@ new Dag5().ExecutePart1();
 new Dag5().ExecutePart2();
 new Dag6().ExecutePart1();
 new Dag6().ExecutePart2();
+new Dag7().ExecutePart1();
+new Dag7().ExecutePart2();
 var diff = Stopwatch.GetElapsedTime(start);
 Console.WriteLine($"Time: {diff.TotalMilliseconds} ms");
 
@@ -23,11 +25,12 @@ Console.WriteLine($"Time: {diff.TotalMilliseconds} ms");
 
 public class Helper
 {
-    public static string LoadInput()
+    public static string LoadInput(bool example)
     {
         var methodInfo = new StackTrace().GetFrame(2)!.GetMethod();
         var className = methodInfo!.ReflectedType!.Name;
-        return File.ReadAllText($"./Inputs/{className}.txt");
+        var name = example ? $"{className}_Example" : className;
+        return File.ReadAllText($"./Inputs/{name}.txt");
     }
 }
 
@@ -36,5 +39,5 @@ public abstract class Dag
     public abstract void ExecutePart1();
     public abstract void ExecutePart2();
 
-    protected static string LoadInput() => Helper.LoadInput();
+    protected static string LoadInput(bool example = false) => Helper.LoadInput(example);
 }
