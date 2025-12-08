@@ -109,18 +109,16 @@ public class Dag6 : Dag
                 num = ToNumber(firstNumber);
                 newSum = false;
             }
+            else if (isPlus)
+            {
+                num += ToNumber(firstNumber);
+            }
             else
             {
-                if (isPlus)
-                {
-                    num += ToNumber(firstNumber);
-                }
-                else
-                {
-                    num *= ToNumber(firstNumber);
-                }
+                num *= ToNumber(firstNumber);
             }
         }
+        
         finalResult += num;
         Console.WriteLine(finalResult);
     }
