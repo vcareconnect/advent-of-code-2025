@@ -1,2 +1,6 @@
 .clj-kondo/
 .lsp/
+/**/.idea
+/**/bin
+/**/obj
+**/*.sln.DotSettings.user
